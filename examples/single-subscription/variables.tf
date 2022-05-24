@@ -19,8 +19,8 @@ variable "name" {
 
 variable "resource_group_name" {
   type        = string
-  default     = "cloud-compliance-scanner"
   description = "The resource group name to deploy secure for cloud stack"
+  default     = ""
 }
 
 variable "cpu" {
@@ -56,3 +56,8 @@ variable "tags" {
   }
 }
 
+variable "deploy_scanning" {
+  type        = bool
+  description = "whether scanning module is to be deployed. requires deploy_cloud_connector_module=true"
+  default     = true
+}

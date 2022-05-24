@@ -50,15 +50,9 @@ variable "api_token" {
   sensitive   = true
 }
 
-variable "verify_ssl" {
-  type        = bool
-  default     = true
-  description = "Verify the SSL certificate of the Secure endpoint"
-}
-
 variable "subscription_id" {
   type        = string
-  description = "Subscription ID where deploy the cloud connector image"
+  description = "Subscription ID where to deploy the cloud connector image"
 }
 
 
@@ -70,6 +64,20 @@ variable "tags" {
   }
 }
 
+variable "tenant_id" {
+  type        = string
+  description = "Azure tenant ID"
+}
+
+variable "client_id" {
+  type        = string
+  description = "application ID"
+}
+
+variable "client_secret" {
+  type        = string
+  description = "application service principal secret"
+}
 
 
 

@@ -1,3 +1,15 @@
+locals {
+  env_vars = {
+    SECURE_URL                                  = var.management_console_url,
+    SECURE_API_TOKEN                            = var.api_token,
+    AZURE_REGION                                = var.location
+    AZURE_TENANT_ID                             = var.tenant_id
+    AZURE_CLIENT_ID                             = var.client_id
+    AZURE_CLIENT_SECRET                         = var.client_secret
+  }
+
+}  
+
 resource "azurerm_virtual_network" "vn" {
   name                = "${var.name}-vn"
   address_space       = ["10.0.0.0/16"]
@@ -57,12 +69,3 @@ resource "azurerm_container_group" "cg" {
   tags = var.tags
 }
 
-locals {
-  env_vars = {
-    SECURE_URL                                  = var.management_console_url,
-    SECURE_API_TOKEN                            = var.api_token,
-    VERIFY_SSL                                  = tostring(var.verify_ssl)
-    AZURE_REGION                                = var.location
-  }
-
-}  
