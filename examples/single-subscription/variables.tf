@@ -1,5 +1,13 @@
 # general
 
+variable "tags" {
+  type        = map(string)
+  description = "Tags to be added to the resources"
+  default = {
+    product = "cloud-compliance-scanner"
+  }
+}
+
 variable "location" {
   type        = string
   default     = "centralus"
@@ -22,6 +30,8 @@ variable "resource_group_name" {
   description = "The resource group name to deploy secure for cloud stack"
   default     = ""
 }
+
+# container instance variables
 
 variable "cpu" {
   type        = string
@@ -48,16 +58,10 @@ variable "api_token" {
   sensitive   = true
 }
 
-variable "tags" {
-  type        = map(string)
-  description = "Tags to be added to the resources"
-  default = {
-    product = "cloud-compliance-scanner"
-  }
-}
+# app id and access creation input
 
 variable "deploy_scanning" {
   type        = bool
-  description = "whether scanning module is to be deployed. requires deploy_cloud_connector_module=true"
+  description = "whether cloud compliance scanner app is to be deployed. Required if cloud-connector container module is to be deployed. "
   default     = true
 }

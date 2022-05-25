@@ -1,3 +1,5 @@
+# general
+
 variable "subscription_ids" {
   type        = list(string)
   description = "Subscription IDs for apply the service principal scope"

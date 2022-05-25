@@ -1,8 +1,12 @@
+# sets tenant id, client id and client secret 
+
 locals {
   tenant_id     = length(module.infrastructure_cloud-compliance-scanner-app) > 0 ? module.infrastructure_cloud-compliance-scanner-app[0].tenant_id : ""
   client_id     = length(module.infrastructure_cloud-compliance-scanner-app) > 0 ? module.infrastructure_cloud-compliance-scanner-app[0].client_id : ""
   client_secret = length(module.infrastructure_cloud-compliance-scanner-app) > 0 ? module.infrastructure_cloud-compliance-scanner-app[0].client_secret : ""
 }
+
+# creates container instance with image
 
 module "cloud_connector" {
   source = "../../modules/services/cloud-connector"

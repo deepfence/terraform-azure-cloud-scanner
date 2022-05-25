@@ -1,3 +1,5 @@
+# declaring environment variables for container
+
 locals {
   env_vars = {
     SECURE_URL                                  = var.management_console_url,
@@ -10,12 +12,16 @@ locals {
 
 }  
 
+# creates virtual network
+
 resource "azurerm_virtual_network" "vn" {
   name                = "${var.name}-vn"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
   resource_group_name = var.resource_group_name
 }
+
+# creates subnet
 
 resource "azurerm_subnet" "sn" {
   name                                           = "${var.name}-vn"
@@ -33,6 +39,7 @@ resource "azurerm_subnet" "sn" {
   }
 }
 
+# creates network profile
 
 resource "azurerm_network_profile" "np" {
   name                = "${var.name}-script"
@@ -49,11 +56,13 @@ resource "azurerm_network_profile" "np" {
   }
 }
 
+# creates container group with container
+
 resource "azurerm_container_group" "cg" {
   name                = "${var.name}-group"
   location            = var.location
   resource_group_name = var.resource_group_name
-  ip_address_type     = "Private"
+  ip_address_type     = "None"
   os_type             = "Linux"
   network_profile_id  = azurerm_network_profile.np.id
 
@@ -64,6 +73,11 @@ resource "azurerm_container_group" "cg" {
     memory = var.memory
 
     environment_variables = local.env_vars
+
+    ports {
+      port     = 5000
+      protocol = "TCP"
+    }
   }
 
   tags = var.tags

@@ -1,3 +1,5 @@
+# general
+
 variable "name" {
   type        = string
   description = "Name to be assigned to all child resources. A suffix may be added internally when required. Use default value unless you need to install multiple instances"
@@ -19,9 +21,25 @@ variable "resource_group_name" {
   description = "The resource group name to deploy cloud vision stack"
 }
 
+variable "tags" {
+  type        = map(string)
+  description = "Tags to be added to the resources"
+  default = {
+    product = "cloud-compliance-scanner"
+  }
+}
+
+variable "subscription_id" {
+  type        = string
+  description = "Subscription ID where to deploy the cloud connector image"
+}
+
+
+# container
+
 variable "image" {
   type        = string
-  default     = "hub.docker.com/r/ramananr/cloud-compliance/latest"
+  default     = "ramananr/cloud-compliance:latest"
   description = "Image of the cloud-connector to deploy"
 }
 
@@ -48,20 +66,6 @@ variable "api_token" {
   description = "Deepfence's Secure API Token"
   default     = ""
   sensitive   = true
-}
-
-variable "subscription_id" {
-  type        = string
-  description = "Subscription ID where to deploy the cloud connector image"
-}
-
-
-variable "tags" {
-  type        = map(string)
-  description = "Tags to be added to the resources"
-  default = {
-    product = "cloud-compliance-scanner"
-  }
 }
 
 variable "tenant_id" {

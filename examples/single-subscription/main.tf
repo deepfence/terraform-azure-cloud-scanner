@@ -1,9 +1,11 @@
+# declares provider
 
 provider "azurerm" {
   features {}
-  #skip_provider_registration = true
- subscription_id = "aeca76e8-1861-4aed-b28a-b8c48923f89b"
+  subscription_id = "aeca76e8-1861-4aed-b28a-b8c48923f89b"
 }
+
+# creates resource group
 
 module "infrastructure_resource_group" {
   source = "../../modules/infrastructure/resource_group"
