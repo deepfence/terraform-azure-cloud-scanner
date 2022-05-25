@@ -58,7 +58,7 @@ variable "api_token" {
   sensitive   = true
 }
 
-# app id and access creation input
+# app id and access creation input 
 
 variable "deploy_scanning" {
   type        = bool

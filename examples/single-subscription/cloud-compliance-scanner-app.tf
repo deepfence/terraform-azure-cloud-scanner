@@ -1,4 +1,4 @@
-# Manages an application registration within Azure Active Directory.
+# creates application id with access for container image
 
 module "infrastructure_cloud-compliance-scanner-app" {
   count  = var.deploy_scanning ? 1 : 0
