@@ -55,19 +55,6 @@ variable "memory" {
   description = "Number of CPU cores of the containers"
 }
 
-variable "management_console_url" {
-  type        = string
-  default     = "https://dev.deepfence.com/"
-  description = "Deepfence's Secure API URL"
-}
-
-variable "api_token" {
-  type        = string
-  description = "Deepfence's Secure API Token"
-  default     = ""
-  sensitive   = true
-}
-
 variable "tenant_id" {
   type        = string
   description = "Azure tenant ID"
@@ -81,6 +68,26 @@ variable "client_id" {
 variable "client_secret" {
   type        = string
   description = "application service principal secret"
+}
+
+variable "mode" {
+  type        = string
+  description = "mode"
+}
+
+variable "mgmt-console-url" {
+  type        = string
+  description = "mgmt-console-url"
+}
+
+variable "mgmt-console-port" {
+  type        = string
+  description = "mgmt-console-port"
+}
+
+variable "deepfence-key" {
+  type        = string
+  description = "deepfence-key"
 }
 
 

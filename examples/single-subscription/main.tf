@@ -1,10 +1,3 @@
-# declares provider details
-
-provider "azurerm" {
-  features {}
-  subscription_id = "aeca76e8-1861-4aed-b28a-b8c48923f89b"
-}
-
 # creates resource group
 
 module "infrastructure_resource_group" {
@@ -44,11 +37,13 @@ module "vn-container" {
   tenant_id              = local.tenant_id
   client_id              = local.client_id
   client_secret          = local.client_secret
-  management_console_url = "https://dev.deepfence.com"
-  api_token              = "token"
+  mode                   = var.mode
+  mgmt-console-url       = var.mgmt-console-url 
+  mgmt-console-port      = var.mgmt-console-port
+  deepfence-key          = var.deepfence-key
 
-  cpu    = var.cpu
-  memory = var.memory
-  depends_on = [module.infrastructure_resource_group]
+  cpu                    = var.cpu
+  memory                 = var.memory
+  depends_on             = [module.infrastructure_resource_group]
   
 }

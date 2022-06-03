@@ -17,11 +17,15 @@ For quick testing, use this snippet on your terraform files
 ```terraform
 provider "azurerm" {
   features {}
-  subscription_id = "<SUBSCRIPTION_ID>"
+  subscription_id = "<SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX>"
 }
-module "cloud-compliance-scanner" {
-  source                  = ""
-  secure_api_token = ""
+module "cloud-compliance_example_single-subscription" {
+  source              = "deepfence/cloud-compliance/azure//examples/single-subscription"
+  version             = "0.1.0"
+  mode                = "<Mode type> eg. service"
+  mgmt-console-url    = "<Console URL> eg. 104.131.55.223"
+  mgmt-console-port   = "<Console port> eg. 443"
+  deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 }
 ```
 

@@ -2,12 +2,14 @@
 
 locals {
   env_vars = {
-    SECURE_URL                                  = var.management_console_url,
-    SECURE_API_TOKEN                            = var.api_token,
     AZURE_REGION                                = var.location
     AZURE_TENANT_ID                             = var.tenant_id
     AZURE_CLIENT_ID                             = var.client_id
     AZURE_CLIENT_SECRET                         = var.client_secret
+    mode                                        = var.mode
+    mgmt-console-url                            = var.mgmt-console-url
+    mgmt-console-port                           = var.mgmt-console-port
+    deepfence-key                               = var.deepfence-key
   }
 
 }  
@@ -24,7 +26,7 @@ resource "azurerm_virtual_network" "vn" {
 # creates subnet
 
 resource "azurerm_subnet" "sn" {
-  name                                           = "${var.name}-vn"
+  name                                           = "${var.name}-subnet"
   resource_group_name                            = var.resource_group_name
   virtual_network_name                           = azurerm_virtual_network.vn.name
   address_prefixes                               = ["10.0.2.0/24"]
@@ -42,7 +44,7 @@ resource "azurerm_subnet" "sn" {
 # creates network profile
 
 resource "azurerm_network_profile" "np" {
-  name                = "${var.name}-script"
+  name                = "${var.name}-np-profile"
   location            = var.location
   resource_group_name = var.resource_group_name
 
