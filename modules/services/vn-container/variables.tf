@@ -39,7 +39,7 @@ variable "subscription_id" {
 
 variable "image" {
   type        = string
-  default     = "ramananr/cloud-compliance:latest"
+  default     = "deepfenceio/cloud-connector:latest"
   description = "Image of the cloud-connector to deploy"
 }
 
