@@ -45,23 +45,34 @@ variable "memory" {
   description = "Number of CPU cores of the containers"
 }
 
-variable "management_console_url" {
-  type        = string
-  description = "Deepfence's Secure API URL"
-  default     = "https://dev.deepfence.com/"
-}
-
-variable "api_token" {
-  type        = string
-  description = "Deepfence's Secure API Token"
-  default     = ""
-  sensitive   = true
-}
-
 # app id and access creation input 
 
 variable "deploy_scanning" {
   type        = bool
   description = "whether cloud compliance scanner app is to be deployed. Required if cloud-connector container module is to be deployed. "
   default     = true
+}
+
+variable "mode" {
+  type        = string
+  description = "mode"
+  default     = ""
+}
+
+variable "mgmt-console-url" {
+  type        = string
+  description = "mgmt-console-url"
+  default     = ""
+}
+
+variable "mgmt-console-port" {
+  type        = string
+  description = "mgmt-console-port"
+  default     = ""
+}
+
+variable "deepfence-key" {
+  type        = string
+  description = "deepfence-key"
+  default     = ""
 }
