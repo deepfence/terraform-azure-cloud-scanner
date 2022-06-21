@@ -2,14 +2,11 @@
 
 locals {
   env_vars = {
+    CLOUD_PROVIDER                              = var.cloud_provider 
+    CLOUD_ACCOUNT_ID                            = var.tenant_id
     AZURE_REGION                                = var.location
-    AZURE_TENANT_ID                             = var.tenant_id
-    AZURE_CLIENT_ID                             = var.client_id
-    AZURE_CLIENT_SECRET                         = var.client_secret
-    mode                                        = var.mode
-    mgmt-console-url                            = var.mgmt-console-url
-    mgmt-console-port                           = var.mgmt-console-port
-    deepfence-key                               = var.deepfence-key
+    AZURE_CLIENT_ID                             = var.client_id        #application id
+    AZURE_CLIENT_SECRET                         = var.client_secret    #application secret
   }
 
 }  
@@ -67,13 +64,14 @@ resource "azurerm_container_group" "cg" {
   ip_address_type     = "Private"
   os_type             = "Linux"
   network_profile_id  = azurerm_network_profile.np.id
+  
 
   container {
-    name   = "${var.name}-container"
-    image  = var.image
-    cpu    = var.cpu
-    memory = var.memory
-
+    name                  = "${var.name}-container"
+    image                 = var.image
+    cpu                   = var.cpu
+    memory                = var.memory
+    commands              = ["/usr/local/bin/cloud_compliance_scan", "-mode", var.mode, "-mgmt-console-url", var.mgmt-console-url, "-mgmt-console-port", var.mgmt-console-port, "-deepfence-key", var.deepfence-key]
     environment_variables = local.env_vars
 
     ports {

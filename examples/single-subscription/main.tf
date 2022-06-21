@@ -5,7 +5,6 @@ module "infrastructure_resource_group" {
   location            = var.location
   name                = var.name
   resource_group_name = var.resource_group_name
-  
 }
 
 # creates application id with access 
