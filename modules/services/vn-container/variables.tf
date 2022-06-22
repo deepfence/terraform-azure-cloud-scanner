@@ -40,7 +40,7 @@ variable "subscription_id" {
 variable "image" {
   type        = string
   default     = "deepfenceio/cloud-connector:latest"
-  description = "Image of the cloud-connector to deploy"
+  description = "Image of the cloud compliance scanner to deploy"
 }
 
 variable "cpu" {
@@ -89,6 +89,13 @@ variable "deepfence-key" {
   type        = string
   description = "deepfence-key"
 }
+
+variable "cloud_provider" {
+  type        = string
+  description = "Cloud provider name"
+  default     = "azure"
+}
+
 
 
 

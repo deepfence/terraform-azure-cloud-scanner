@@ -56,7 +56,7 @@ variable "deploy_scanning" {
 variable "mode" {
   type        = string
   description = "mode"
-  default     = ""
+  default     = "service"
 }
 
 variable "mgmt-console-url" {
@@ -68,7 +68,7 @@ variable "mgmt-console-url" {
 variable "mgmt-console-port" {
   type        = string
   description = "mgmt-console-port"
-  default     = ""
+  default     = "443"
 }
 
 variable "deepfence-key" {
