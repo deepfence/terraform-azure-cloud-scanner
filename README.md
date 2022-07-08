@@ -6,16 +6,6 @@ This module deploys Cloud compliance scanner for Azure by creating underlying re
 
 * **Deployment cost** This example will create resources that cost money.<br/>Run `terraform destroy` when you don't need them anymore
 
-<br/>
-
-## Usage
-
-### - Single-Subscription
-
-Workload will be deployed in the same account where user's resources will be watched.<br/>
-More info
-in [`./examples/single-subscription`](https://github.com/deepfence/terraform-azure/tree/main/examples/single-subscription)
-
 ## Required Permissions
 
 ### Provisioning Permissions
@@ -23,6 +13,20 @@ in [`./examples/single-subscription`](https://github.com/deepfence/terraform-azu
 User deploying the resources needs the below access on Azure-
 - Subscription to create container group, virtual network, resource group.
 - Security administrator role to set up access.
+
+## Usage
+
+### - Single-Subscription
+
+This approach deploys Cloud compliance scanner in a single Azure cloud subscription. Cloud compliance scanner will scan resources in the subscription id where deployment will be done.<br/>
+More info
+in [`./examples/single-subscription`](https://github.com/deepfence/terraform-azure/tree/main/examples/single-subscription)
+
+### - Tenant-Subscriptions
+
+This approach deploys Cloud compliance scanner in a single Azure cloud subscription. However, Cloud compliance scanner will scan resources in all the subscription ids given as input.<br/>
+More info
+in [`./examples/tenant-subscriptions`](https://github.com/deepfence/terraform-azure/tree/main/examples/single-subscription)
 
 ## Authors
 

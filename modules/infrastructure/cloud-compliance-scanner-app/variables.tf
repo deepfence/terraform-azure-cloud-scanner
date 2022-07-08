@@ -1,10 +1,5 @@
 # general
 
-variable "subscription_ids" {
-  type        = list(string)
-  description = "Subscription IDs for apply the service principal scope"
-}
-
 variable "name" {
   type        = string
   description = "Name to be assigned to all child resources. A suffix may be added internally when required. Use default value unless you need to install multiple instances"
@@ -14,4 +9,11 @@ variable "name" {
     error_message = "Must enter a naming prefix up to 64 alphanumeric characters."
   }
   default = "cloud-compliance-scanner"
+}
+
+# application access
+
+variable "subscription_ids_access" {
+  type        = list(string)
+  description = "Subscription IDs for apply the service principal scope"
 }
