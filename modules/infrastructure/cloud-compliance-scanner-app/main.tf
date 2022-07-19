@@ -1,7 +1,7 @@
 # list subscription scope for applying access
 
 locals {
-  scopes = toset([for s in var.subscription_ids : "/subscriptions/${s}"])
+  scopes = toset([for s in var.subscription_ids_access : "/subscriptions/${s}"])
 }
 
 # data source to access the configuration of the AzureAD provider.
