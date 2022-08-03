@@ -42,7 +42,7 @@ resource "azurerm_subnet" "sn" {
 # creates network profile
 
 resource "azurerm_network_profile" "np" {
-  name                = "${var.name}-np-profile"
+  name                = "${var.name}-np"
   location            = var.location
   resource_group_name = var.resource_group_name
 
@@ -59,7 +59,7 @@ resource "azurerm_network_profile" "np" {
 # creates container group with container
 
 resource "azurerm_container_group" "cg" {
-  name                = "${var.name}-group"
+  name                = "${var.name}-cg"
   location            = var.location
   resource_group_name = var.resource_group_name
   ip_address_type     = "Private"
