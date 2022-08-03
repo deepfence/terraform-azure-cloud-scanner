@@ -20,7 +20,7 @@ provider "azurerm" {
   subscription_id = "<SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX>"
 }
 module "cloud-scanner_example_single-subscription" {
-  source              = "deepfence/cloud-scanner/azure/examples/single-subscription"
+  source              = "deepfence/cloud-scanner/azure//examples/single-subscription"
   version             = "0.1.0"
   mode                = "<Mode type> eg. service"
   mgmt-console-url    = "<Console URL> eg. XXX.XXX.XX.XXX"
