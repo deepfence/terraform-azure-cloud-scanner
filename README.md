@@ -1,6 +1,6 @@
-# Cloud compliance scanner for Azure by Deepfence
+# Cloud scanner for Azure by Deepfence
 
-This module deploys Cloud compliance scanner for Azure by creating underlying resources in Azure.
+This module deploys Cloud scanner for Azure by creating underlying resources in Azure.
 
 ### Notice
 
@@ -18,15 +18,15 @@ User deploying the resources needs the below access on Azure-
 
 ### - Single-Subscription
 
-This approach deploys Cloud compliance scanner in a single Azure cloud subscription. Cloud compliance scanner will scan resources in the subscription id where deployment will be done.<br/>
+This approach deploys Cloud scanner in a single Azure cloud subscription. Cloud scanner will scan resources in the subscription id where deployment will be done.<br/>
 More info
-in [`./examples/single-subscription`](https://github.com/deepfence/terraform-azure/tree/main/examples/single-subscription)
+in [`./examples/single-subscription`](https://github.com/deepfence/terraform-azure-cloud-scanner/tree/main/examples/single-subscription)
 
 ### - Tenant-Subscriptions
 
-This approach deploys Cloud compliance scanner in a single Azure cloud subscription. However, Cloud compliance scanner will scan resources in all the subscription ids given as input.<br/>
+This approach deploys Cloud scanner in a single Azure cloud subscription. However, Cloud scanner will scan resources in all the subscription ids given as input.<br/>
 More info
-in [`./examples/tenant-subscriptions`](https://github.com/deepfence/terraform-azure/tree/main/examples/single-subscription)
+in [`./examples/tenant-subscriptions`](https://github.com/deepfence/terraform-azure-cloud-scanner/tree/main/examples/tenant-subscriptions)
 
 ## Authors
 

@@ -1,1 +1,34 @@
-{"Modules":[{"Key":"infrastructure_cloud-compliance-scanner-app","Source":"../../modules/infrastructure/cloud-compliance-scanner-app","Dir":"../../modules/infrastructure/cloud-compliance-scanner-app"},{"Key":"infrastructure_resource_group","Source":"../../modules/infrastructure/resource_group","Dir":"../../modules/infrastructure/resource_group"},{"Key":"vn-container","Source":"../../modules/services/vn-container","Dir":"../../modules/services/vn-container"},{"Key":"cloud_connector","Source":"../../modules/services/cloud-connector","Dir":"../../modules/services/cloud-connector"},{"Key":"","Source":"","Dir":"."},{"Key":"infrastructure_enterprise_app","Source":"../../modules/infrastructure/enterprise_app","Dir":"../../modules/infrastructure/enterprise_app"}]}
+{
+    "Modules": [
+        {
+            "Key": "infrastructure_cloud-scanner-app",
+            "Source": "../../modules/infrastructure/cloud-scanner-app",
+            "Dir": "../../modules/infrastructure/cloud-scanner-app"
+        },
+        {
+            "Key": "infrastructure_resource_group",
+            "Source": "../../modules/infrastructure/resource_group",
+            "Dir": "../../modules/infrastructure/resource_group"
+        },
+        {
+            "Key": "vn-container",
+            "Source": "../../modules/services/vn-container",
+            "Dir": "../../modules/services/vn-container"
+        },
+        {
+            "Key": "cloud_connector",
+            "Source": "../../modules/services/cloud-connector",
+            "Dir": "../../modules/services/cloud-connector"
+        },
+        {
+            "Key": "",
+            "Source": "",
+            "Dir": "."
+        },
+        {
+            "Key": "infrastructure_enterprise_app",
+            "Source": "../../modules/infrastructure/enterprise_app",
+            "Dir": "../../modules/infrastructure/enterprise_app"
+        }
+    ]
+}

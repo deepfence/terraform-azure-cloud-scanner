@@ -4,7 +4,7 @@ variable "tags" {
   type        = map(string)
   description = "Tags to be added to the resources"
   default = {
-    product = "cloud-compliance-scanner"
+    product = "cloud-scanner"
   }
 }
 
@@ -22,7 +22,7 @@ variable "name" {
     condition     = can(regex("^[a-zA-Z0-9\\-]+$", var.name)) && length(var.name) > 1 && length(var.name) <= 64
     error_message = "Must enter a naming up to 64 alphanumeric characters."
   }
-  default = "cloud-compliance-scanner"
+  default = "cloud-scanner"
 }
 
 variable "resource_group_name" {
@@ -76,6 +76,11 @@ variable "deepfence-key" {
 variable "subscription_ids_access" {
   default     = []
   type        = list(string)
-  description = "List of subscription IDs where cloud compliance scanner will scan resources. If no subscriptions are specified, all of the tenant will be used."
+  description = "List of subscription IDs where cloud scanner will scan resources. If no subscriptions are specified, all of the tenant will be used."
 }
 
+
+variable "image" {
+  type    = string
+  default = "deepfenceio/cloud-scanner:latest"
+}

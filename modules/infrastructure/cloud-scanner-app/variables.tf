@@ -8,7 +8,7 @@ variable "name" {
     condition     = can(regex("^[a-zA-Z0-9\\-]+$", var.name)) && length(var.name) > 1 && length(var.name) <= 64
     error_message = "Must enter a naming prefix up to 64 alphanumeric characters."
   }
-  default = "cloud-compliance-scanner"
+  default = "cloud-scanner"
 }
 
 # application access

@@ -2,14 +2,15 @@
 
 locals {
   env_vars = {
-    CLOUD_PROVIDER                              = var.cloud_provider 
-    CLOUD_ACCOUNT_ID                            = var.tenant_id
-    AZURE_REGION                                = var.location
-    AZURE_CLIENT_ID                             = var.client_id        #application id
-    AZURE_CLIENT_SECRET                         = var.client_secret    #application secret
+    CLOUD_PROVIDER        = var.cloud_provider
+    CLOUD_ACCOUNT_ID      = var.tenant_id
+    AZURE_TENANT_ID       = var.tenant_id
+    AZURE_REGION          = var.location
+    AZURE_CLIENT_ID       = var.client_id     #application id
+    AZURE_CLIENT_SECRET   = var.client_secret #application secret
+    AZURE_SUBSCRIPTION_ID = var.subscription_id
   }
-
-}  
+}
 
 # creates virtual network
 
@@ -23,10 +24,10 @@ resource "azurerm_virtual_network" "vn" {
 # creates subnet
 
 resource "azurerm_subnet" "sn" {
-  name                                           = "${var.name}-subnet"
-  resource_group_name                            = var.resource_group_name
-  virtual_network_name                           = azurerm_virtual_network.vn.name
-  address_prefixes                               = ["10.0.2.0/24"]
+  name                 = "${var.name}-subnet"
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.vn.name
+  address_prefixes     = ["10.0.2.0/24"]
 
   delegation {
     name = "${var.name}-delegation"
@@ -64,7 +65,7 @@ resource "azurerm_container_group" "cg" {
   ip_address_type     = "Private"
   os_type             = "Linux"
   network_profile_id  = azurerm_network_profile.np.id
-  
+
 
   container {
     name                  = "${var.name}-container"
