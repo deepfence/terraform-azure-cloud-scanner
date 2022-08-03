@@ -8,7 +8,7 @@ locals {
 
 resource "azurerm_resource_group" "rg" {
   count    = local.deploy_resource_group ? 1 : 0
-  name     = "${lower(var.name)}-resourcegroup"
+  name     = "${lower(var.name)}-resource-group"
   location = var.location
 
   tags = var.tags

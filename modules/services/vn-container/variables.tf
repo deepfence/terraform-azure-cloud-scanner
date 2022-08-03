@@ -8,7 +8,7 @@ variable "name" {
     condition     = can(regex("^[a-zA-Z0-9\\-]+$", var.name)) && length(var.name) > 1 && length(var.name) <= 64
     error_message = "Must enter a naming up to 64 alphanumeric characters."
   }
-  default = "cloud-compliance-scanner"
+  default = "deepfence-cloud-scanner"
 }
 
 variable "location" {
@@ -25,7 +25,7 @@ variable "tags" {
   type        = map(string)
   description = "Tags to be added to the resources"
   default = {
-    product = "cloud-compliance-scanner"
+    product = "deepfence-cloud-scanner"
   }
 }
 
@@ -39,8 +39,8 @@ variable "subscription_id" {
 
 variable "image" {
   type        = string
-  default     = "deepfenceio/cloud-connector:latest"
-  description = "Image of the cloud compliance scanner to deploy"
+  default     = "deepfenceio/cloud-scanner:latest"
+  description = "Image of the cloud scanner to deploy"
 }
 
 variable "cpu" {
