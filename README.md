@@ -1,4 +1,4 @@
-# Cloud scanner for Azure by Deepfence
+# Cloud Scanner for Azure by Deepfence
 
 This module deploys Cloud scanner for Azure by creating underlying resources in Azure.
 
