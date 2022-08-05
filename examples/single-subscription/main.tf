@@ -10,8 +10,8 @@ module "infrastructure_resource_group" {
 # creates application id with access 
 
 module "infrastructure_cloud-scanner-app" {
-  source = "../../modules/infrastructure/cloud-scanner-app"
-
+  source                  = "../../modules/infrastructure/cloud-scanner-app"
+  subscription_ids_access = [data.azurerm_subscription.current.subscription_id]
   name                    = var.name
 }
 

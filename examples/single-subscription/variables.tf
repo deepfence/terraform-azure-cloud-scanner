@@ -84,3 +84,4 @@ variable "image" {
   type    = string
   default = "deepfenceio/cloud-scanner:latest"
 }
+

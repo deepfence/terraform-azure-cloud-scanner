@@ -1,3 +1,9 @@
+# list subscription scope for applying access
+
+locals {
+  scopes = toset([for s in var.subscription_ids_access : "/subscriptions/${s}"])
+}
+
 # data source to access the configuration of the AzureAD provider.
 
 data "azuread_client_config" "current" {}
@@ -45,5 +51,14 @@ resource "azuread_directory_role" "example" {
 resource "azuread_directory_role_assignment" "example" {
   role_id             = azuread_directory_role.example.template_id
   principal_object_id = azuread_service_principal.asp.object_id
+}
+
+# Assigns a given Principal (User or Group) to a given Role.
+
+resource "azurerm_role_assignment" "main" {
+  for_each             = local.scopes
+  scope                = each.value
+  role_definition_name = "Reader"
+  principal_id         = azuread_service_principal.asp.id
 }
 
