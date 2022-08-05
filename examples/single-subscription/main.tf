@@ -18,7 +18,6 @@ module "infrastructure_cloud-scanner-app" {
   source = "../../modules/infrastructure/cloud-scanner-app"
 
   name                    = var.name
-  subscription_ids_access = [data.azurerm_subscription.current.subscription_id]
 }
 
 # imports tenant id, application id and principal secret 

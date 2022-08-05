@@ -11,9 +11,3 @@ variable "name" {
   default = "deepfence-cloud-scanner"
 }
 
-# application access
-
-variable "subscription_ids_access" {
-  type        = list(string)
-  description = "Subscription IDs for apply the service principal scope"
-}
