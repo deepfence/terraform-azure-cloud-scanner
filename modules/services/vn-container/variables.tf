@@ -73,6 +73,7 @@ variable "client_secret" {
 variable "mode" {
   type        = string
   description = "mode"
+  default     = "service"
 }
 
 variable "mgmt-console-url" {
