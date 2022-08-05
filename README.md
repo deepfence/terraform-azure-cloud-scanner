@@ -20,13 +20,13 @@ User deploying the resources needs the below access on Azure-
 
 This approach deploys Cloud Scanner in a single Azure cloud subscription. Cloud Scanner will scan resources in the subscription id where deployment will be done.<br/>
 More info
-in [`./examples/single-subscription`](examples/single-subscription)
+in [`./examples/single-subscription`](https://github.com/deepfence/terraform-azure-cloud-scanner/tree/main/examples/single-subscription)
 
 ### - Tenant-Subscriptions
 
 This approach deploys Cloud Scanner in a single Azure cloud subscription. However, Cloud Scanner will scan resources in all the subscription ids given as input.<br/>
 More info
-in [`./examples/tenant-subscriptions`](examples/tenant-subscriptions)
+in [`./examples/tenant-subscriptions`](https://github.com/deepfence/terraform-azure-cloud-scanner/tree/main/examples/tenant-subscriptions)
 
 ## Authors
 
