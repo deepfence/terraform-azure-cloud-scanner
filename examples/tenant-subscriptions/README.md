@@ -1,6 +1,6 @@
-# Cloud scanner for Azure cloud<br/>[ Example: Tenant-Subscriptions ]
+# Cloud Scanner for Azure<br/>[ Example: Tenant-Subscriptions ]
 
-This module example deploys Cloud scanner in a single Azure cloud subscription. Cloud scanner will scan resources in all the subscription ids given as input.
+This module example deploys Cloud Scanner in a single Azure cloud subscription. Cloud Scanner will scan resources in all the subscription ids given as input.
 
 ### Notice
 
@@ -19,10 +19,10 @@ provider "azurerm" {
   features {}
   subscription_id = "<SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX>"
 }
+
 module "cloud-scanner_example_tenant-subscriptions" {
   source                  = "deepfence/cloud-scanner/azure//examples/tenant-subscriptions"
   version                 = "0.1.0"
-  mode                    = "<Mode type> eg. service"
   mgmt-console-url        = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port       = "<Console port> eg. 443"
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"

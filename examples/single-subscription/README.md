@@ -1,6 +1,6 @@
-# Cloud scanner for Azure cloud<br/>[ Example: Single-Subscription ]
+# Cloud Scanner for Azure<br/>[ Example: Single-Subscription ]
 
-This module example deploys Cloud scanner in a single Azure cloud subscription. Cloud scanner will scan resources in the subscription id where deployment will be done.
+This module example deploys Cloud Scanner in a single Azure cloud subscription. Cloud Scanner will scan resources in the subscription id where deployment will be done.
 
 ### Notice
 
