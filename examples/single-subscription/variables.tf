@@ -56,7 +56,7 @@ variable "mode" {
 variable "mgmt-console-url" {
   type        = string
   description = "mgmt-console-url"
-  default     = "test"
+  default     = ""
 }
 
 variable "mgmt-console-port" {
@@ -68,7 +68,7 @@ variable "mgmt-console-port" {
 variable "deepfence-key" {
   type        = string
   description = "deepfence-key"
-  default     = "test"
+  default     = ""
 }
 
 # application access
