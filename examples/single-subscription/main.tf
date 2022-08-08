@@ -1,7 +1,7 @@
 # Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-}
+# provider "azurerm" {
+#   features {}
+# }
 
 # creates resource group
 
