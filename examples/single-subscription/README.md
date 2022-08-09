@@ -48,7 +48,7 @@ $ terraform apply
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.16.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.17.0 |
 
 ## Modules
 
@@ -72,7 +72,7 @@ $ terraform apply
 | <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""` | no |
 | <a name="input_image"></a> [image](#input\_image) | n/a | `string` | `"deepfenceio/cloud-scanner:latest"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | `"centralus"` | no |
-| <a name="input_memory"></a> [memory](#input\_memory) | Number of CPU cores of the containers | `string` | `"2"` | no |
+| <a name="input_memory"></a> [memory](#input\_memory) | Memory in GB of the container | `string` | `"2"` | no |
 | <a name="input_mgmt-console-port"></a> [mgmt-console-port](#input\_mgmt-console-port) | mgmt-console-port | `string` | `"443"` | no |
 | <a name="input_mgmt-console-url"></a> [mgmt-console-url](#input\_mgmt-console-url) | mgmt-console-url | `string` | `""` | no |
 | <a name="input_mode"></a> [mode](#input\_mode) | mode | `string` | `"service"` | no |

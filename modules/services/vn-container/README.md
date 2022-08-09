@@ -32,14 +32,14 @@ No modules.
 | <a name="input_client_id"></a> [client\_id](#input\_client\_id) | application ID | `string` | n/a | yes |
 | <a name="input_client_secret"></a> [client\_secret](#input\_client\_secret) | application service principal secret | `string` | n/a | yes |
 | <a name="input_cloud_provider"></a> [cloud\_provider](#input\_cloud\_provider) | Cloud provider name | `string` | `"azure"` | no |
-| <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of CPU cores of the containers | `string` | `"1"` | no |
+| <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of CPU cores of the container | `string` | `"1"` | no |
 | <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | n/a | yes |
 | <a name="input_image"></a> [image](#input\_image) | Image of the cloud scanner to deploy | `string` | `"deepfenceio/cloud-scanner:latest"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | n/a | yes |
-| <a name="input_memory"></a> [memory](#input\_memory) | Number of CPU cores of the containers | `string` | `"2"` | no |
+| <a name="input_memory"></a> [memory](#input\_memory) | Memory in GB of the container | `string` | `"2"` | no |
 | <a name="input_mgmt-console-port"></a> [mgmt-console-port](#input\_mgmt-console-port) | mgmt-console-port | `string` | n/a | yes |
 | <a name="input_mgmt-console-url"></a> [mgmt-console-url](#input\_mgmt-console-url) | mgmt-console-url | `string` | n/a | yes |
-| <a name="input_mode"></a> [mode](#input\_mode) | mode | `string` | n/a | yes |
+| <a name="input_mode"></a> [mode](#input\_mode) | mode | `string` | `"service"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name to be assigned to all child resources. A suffix may be added internally when required. Use default value unless you need to install multiple instances | `string` | `"deepfence-cloud-scanner"` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The resource group name to deploy cloud vision stack | `string` | n/a | yes |
 | <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | Subscription ID where to deploy the cloud connector image | `string` | n/a | yes |
