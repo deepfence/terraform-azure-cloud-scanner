@@ -42,7 +42,7 @@ variable "cpu" {
 variable "memory" {
   type        = string
   default     = "2"
-  description = "Number of CPU cores of the containers"
+  description = "Memory in GB of the container"
 }
 
 # container env variables
