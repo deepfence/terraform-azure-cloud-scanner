@@ -40,13 +40,13 @@ variable "image" {
 variable "cpu" {
   type        = string
   default     = "1"
-  description = "Number of CPU cores of the containers"
+  description = "Number of CPU cores of the container"
 }
 
 variable "memory" {
   type        = string
   default     = "2"
-  description = "Number of CPU cores of the containers"
+  description = "Memory in GB of the container"
 }
 
 variable "mode" {
