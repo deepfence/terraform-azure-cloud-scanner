@@ -44,9 +44,13 @@ resource "azuread_application_password" "aap" {
   ]
 }
 
+# creates a azure directory role
+
 resource "azuread_directory_role" "example" {
   display_name = "Global Reader"
 }
+
+# assigns azure directory role to service principal
 
 resource "azuread_directory_role_assignment" "example" {
   role_id             = azuread_directory_role.example.template_id

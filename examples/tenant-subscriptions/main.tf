@@ -11,18 +11,18 @@ module "infrastructure_resource_group" {
 
 module "infrastructure_cloud-scanner-app" {
   source = "../../modules/infrastructure/cloud-scanner-app"
-
-  name                    = var.name
+  
   subscription_ids_access = var.subscription_ids_access
+  name                    = var.name
 
 }
 
-# imports tenant id, application id and principal secret 
+# imports tenant id and formats subscriptions ids to string
 
 locals {
   tenant_id     = module.infrastructure_cloud-scanner-app.tenant_id
-  client_id     = module.infrastructure_cloud-scanner-app.client_id
-  client_secret = module.infrastructure_cloud-scanner-app.client_secret
+  ids = var.subscription_ids_access
+  string_formatted_ids = format("%s", join(", ", local.ids))  
 }
 
 # creates container instance with image
@@ -30,12 +30,10 @@ locals {
 module "vn-container" {
   source = "../../modules/services/vn-container"
 
-  subscription_id     = data.azurerm_subscription.current.subscription_id
+  multiple-acc-ids    = local.string_formatted_ids
   resource_group_name = module.infrastructure_resource_group.resource_group_name
   location            = var.location
-  tenant_id           = local.tenant_id
-  client_id           = local.client_id
-  client_secret       = local.client_secret
+  org-acc-id          = local.tenant_id
   mode                = var.mode
   mgmt-console-url    = var.mgmt-console-url
   mgmt-console-port   = var.mgmt-console-port

@@ -24,7 +24,7 @@ module "cloud-scanner_example_single-subscription" {
   source              = "deepfence/cloud-scanner/azure//examples/single-subscription"
   version             = "0.1.0"
   mgmt-console-url    = "<Console URL> eg. XXX.XXX.XX.XXX"
-  mgmt-console-port   = "443"
+  mgmt-console-port   = "<Console port> eg. 443"
   deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 }
 ```
