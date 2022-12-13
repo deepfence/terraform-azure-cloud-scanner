@@ -71,6 +71,11 @@ variable "deepfence-key" {
   default     = ""
 }
 
+variable "image" {
+  type    = string
+  default = "deepfenceio/cloud-scanner:latest"
+}
+
 # application access
 
 variable "subscription_ids_access" {

@@ -26,6 +26,7 @@ module "cloud-scanner_example_single-subscription" {
   mgmt-console-url    = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port   = "443"
   deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+  image               = "deepfenceio/cloud-scanner:latest"
 }
 ```
 

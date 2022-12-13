@@ -46,5 +46,6 @@ module "vn-container" {
   deepfence-key       = var.deepfence-key
   cpu                 = var.cpu
   memory              = var.memory
+  image               = var.image
   depends_on          = [module.infrastructure_resource_group]
 }
