@@ -26,6 +26,7 @@ module "cloud-scanner_example_tenant-subscriptions" {
   mgmt-console-url        = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port       = "<Console port> eg. 443"
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+  image                   = "deepfenceio/cloud-scanner:latest"
   subscription_ids_access = "<List of subscription ids which can be accessed by cloud scanner> eg. ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
 }
 ```
