@@ -1,17 +1,3 @@
-# declaring environment variables for container
-
-locals {
-  env_vars = {
-    CLOUD_PROVIDER        = var.cloud_provider
-    CLOUD_ACCOUNT_ID      = var.tenant_id
-    AZURE_TENANT_ID       = var.tenant_id
-    AZURE_REGION          = var.location
-    AZURE_CLIENT_ID       = var.client_id     #application id
-    AZURE_CLIENT_SECRET   = var.client_secret #application secret
-    AZURE_SUBSCRIPTION_ID = var.subscription_id
-  }
-}
-
 # creates virtual network
 
 resource "azurerm_virtual_network" "vn" {
@@ -72,9 +58,7 @@ resource "azurerm_container_group" "cg" {
     image                 = var.image
     cpu                   = var.cpu
     memory                = var.memory
-    commands              = ["/usr/local/bin/cloud_compliance_scan", "-mode", var.mode, "-mgmt-console-url", var.mgmt-console-url, "-mgmt-console-port", var.mgmt-console-port, "-deepfence-key", var.deepfence-key]
-    environment_variables = local.env_vars
-
+    commands              = ["/usr/local/bin/cloud_compliance_scan", "-mode", var.mode, "-mgmt-console-url", var.mgmt-console-url, "-mgmt-console-port", var.mgmt-console-port, "-deepfence-key", var.deepfence-key, "-cloud_provider", var.cloud_provider, "-multiple-acc-ids", var.multiple-acc-ids, "-org-acc-id", var.org-acc-id]
     ports {
       port     = 5000
       protocol = "TCP"

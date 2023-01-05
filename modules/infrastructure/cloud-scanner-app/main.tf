@@ -44,6 +44,19 @@ resource "azuread_application_password" "aap" {
   ]
 }
 
+# creates a azure directory role
+
+resource "azuread_directory_role" "example" {
+  display_name = "Global Reader"
+}
+
+# assigns azure directory role to service principal
+
+resource "azuread_directory_role_assignment" "example" {
+  role_id             = azuread_directory_role.example.template_id
+  principal_object_id = azuread_service_principal.asp.object_id
+}
+
 # Assigns a given Principal (User or Group) to a given Role.
 
 resource "azurerm_role_assignment" "main" {
@@ -52,3 +65,4 @@ resource "azurerm_role_assignment" "main" {
   role_definition_name = "Reader"
   principal_id         = azuread_service_principal.asp.id
 }
+

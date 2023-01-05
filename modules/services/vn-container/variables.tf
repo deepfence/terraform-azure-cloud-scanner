@@ -29,12 +29,6 @@ variable "tags" {
   }
 }
 
-variable "subscription_id" {
-  type        = string
-  description = "Subscription ID where to deploy the cloud connector image"
-}
-
-
 # container
 
 variable "image" {
@@ -53,21 +47,6 @@ variable "memory" {
   type        = string
   default     = "2"
   description = "Memory in GB of the container"
-}
-
-variable "tenant_id" {
-  type        = string
-  description = "Azure tenant ID"
-}
-
-variable "client_id" {
-  type        = string
-  description = "application ID"
-}
-
-variable "client_secret" {
-  type        = string
-  description = "application service principal secret"
 }
 
 variable "mode" {
@@ -97,6 +76,15 @@ variable "cloud_provider" {
   default     = "azure"
 }
 
+variable "multiple-acc-ids" {
+  type        = string
+  description = "These are list of subscription ids where scanning will be done"
+}
+
+variable "org-acc-id" {
+  type        = string
+  description = "Tenant ID"
+}
 
 
 
