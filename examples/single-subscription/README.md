@@ -12,7 +12,7 @@ Minimum requirements:
 
 ## Usage
 
-For quick testing, use this snippet on your terraform files
+For quick testing, use this snippet on your terraform (.tf) files
 
 ```terraform
 provider "azurerm" {
@@ -26,8 +26,14 @@ module "cloud-scanner_example_single-subscription" {
   mgmt-console-url    = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port   = "443"
   deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-  image               = "deepfenceio/cloud-scanner:latest"
+  name                = "deepfence-cloud-scanner"
 }
+```
+
+And on a separate .tfvars file:
+
+```terraform
+image               = "deepfenceio/cloud-scanner:latest"
 ```
 
 To run this example you need be logged in Azure using Azure CLI tool and to execute:
