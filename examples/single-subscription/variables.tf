@@ -82,5 +82,5 @@ variable "subscription_ids_access" {
 
 variable "image" {
   type    = string
-  default = "deepfenceio/cloud-scanner:latest"
+  default = "deepfenceio/cloud-scanner:1.5.0"
 }
