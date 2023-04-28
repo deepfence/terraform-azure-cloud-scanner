@@ -64,7 +64,7 @@ resource "azurerm_container_group" "cg" {
   resource_group_name = var.resource_group_name
   ip_address_type     = "Private"
   os_type             = "Linux"
-  network_profile_id  = azurerm_network_profile.np.id
+  subnet_ids          = [azurerm_subnet.sn.id]
 
 
   container {
