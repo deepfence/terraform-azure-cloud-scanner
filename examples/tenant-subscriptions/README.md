@@ -22,11 +22,12 @@ provider "azurerm" {
 
 module "cloud-scanner_example_tenant-subscriptions" {
   source                  = "deepfence/cloud-scanner/azure//examples/tenant-subscriptions"
-  version                 = "0.1.0"
+  version                 = "0.2.0"
   mgmt-console-url        = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port       = "<Console port> eg. 443"
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-  image                   = "deepfenceio/cloud-scanner:latest"
+  name                    = "deepfence-cloud-scanner"
+  image                   = "quay.io/deepfenceio/cloud-scanner:2.0.0"
   subscription_ids_access = "<List of subscription ids which can be accessed by cloud scanner> eg. ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
 }
 ```

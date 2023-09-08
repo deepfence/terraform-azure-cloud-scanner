@@ -22,11 +22,12 @@ provider "azurerm" {
 
 module "cloud-scanner_example_single-subscription" {
   source              = "deepfence/cloud-scanner/azure//examples/single-subscription"
-  version             = "0.1.0"
+  version             = "0.2.0"
   mgmt-console-url    = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port   = "443"
   deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-  image               = "deepfenceio/cloud-scanner:latest"
+  name                = "deepfence-cloud-scanner"
+  image               = "quay.io/deepfenceio/cloud-scanner:2.0.0"
 }
 ```
 
