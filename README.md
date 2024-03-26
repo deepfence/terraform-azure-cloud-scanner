@@ -28,7 +28,7 @@ This approach deploys Cloud Scanner in a single Azure cloud subscription. Howeve
 More info
 in [`./examples/tenant-subscriptions`](https://github.com/deepfence/terraform-azure-cloud-scanner/tree/main/examples/tenant-subscriptions)
 
-## Recsources
+## Resources
 
 Following resources are created in a new resource group:
 
