@@ -27,7 +27,7 @@ module "cloud-scanner_example_tenant-subscriptions" {
   mgmt-console-port       = "<Console port> eg. 443"
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   name                    = "deepfence-cloud-scanner"
-  image                   = "quay.io/deepfenceio/cloud-scanner:2.0.0"
+  image                   = "quay.io/deepfenceio/cloud-scanner:2.2.0"
   subscription_ids_access = "<List of subscription ids which can be accessed by cloud scanner> eg. ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
 }
 ```

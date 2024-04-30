@@ -27,7 +27,7 @@ module "cloud-scanner_example_single-subscription" {
   mgmt-console-port   = "443"
   deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   name                = "deepfence-cloud-scanner"
-  image               = "quay.io/deepfenceio/cloud-scanner:2.0.0"
+  image               = "quay.io/deepfenceio/cloud-scanner:2.2.0"
 }
 ```
 
@@ -72,7 +72,7 @@ $ terraform apply
 |------|-------------|------|---------|:--------:|
 | <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of CPU cores of the containers | `string` | `"1"` | no |
 | <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""` | no |
-| <a name="input_image"></a> [image](#input\_image) | n/a | `string` | `"deepfenceio/cloud-scanner:latest"` | no |
+| <a name="input_image"></a> [image](#input\_image) | n/a | `string` | `"deepfenceio/cloud-scanner:2.2.0"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | `"centralus"` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory in GB of the container | `string` | `"2"` | no |
 | <a name="input_mgmt-console-port"></a> [mgmt-console-port](#input\_mgmt-console-port) | mgmt-console-port | `string` | `"443"` | no |
