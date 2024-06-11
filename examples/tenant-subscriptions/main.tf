@@ -40,12 +40,13 @@ module "vn-container" {
   tenant_id           = local.tenant_id
   client_id           = local.client_id
   client_secret       = local.client_secret
-  mode                = var.mode
   mgmt-console-url    = var.mgmt-console-url
   mgmt-console-port   = var.mgmt-console-port
   deepfence-key       = var.deepfence-key
   cpu                 = var.cpu
   memory              = var.memory
   image               = var.image
+  is_organizational   = "true"
+  log_level           = var.log_level
   depends_on          = [module.infrastructure_resource_group]
 }

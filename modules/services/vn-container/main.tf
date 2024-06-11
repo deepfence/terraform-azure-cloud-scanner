@@ -2,13 +2,20 @@
 
 locals {
   env_vars = {
-    CLOUD_PROVIDER        = var.cloud_provider
-    CLOUD_ACCOUNT_ID      = var.tenant_id
-    AZURE_TENANT_ID       = var.tenant_id
-    AZURE_REGION          = var.location
-    AZURE_CLIENT_ID       = var.client_id     #application id
-    AZURE_CLIENT_SECRET   = var.client_secret #application secret
-    AZURE_SUBSCRIPTION_ID = var.subscription_id
+    CLOUD_PROVIDER          = var.cloud_provider
+    CLOUD_REGION            = var.location
+    CLOUD_ACCOUNT_ID        = var.tenant_id
+    AZURE_TENANT_ID         = var.tenant_id
+    AZURE_CLIENT_ID         = var.client_id     #application id
+    AZURE_CLIENT_SECRET     = var.client_secret #application secret
+    AZURE_SUBSCRIPTION_ID   = var.subscription_id
+    MGMT_CONSOLE_URL        = var.mgmt-console-url
+    MGMT_CONSOLE_PORT       = var.mgmt-console-port
+    DEEPFENCE_KEY           = var.deepfence-key
+    ORGANIZATION_DEPLOYMENT = tostring(var.is_organizational)
+    HTTP_SERVER_REQUIRED    = "false"
+    LOG_LEVEL               = var.log_level
+    SCAN_INACTIVE_THRESHOLD = "21600"
   }
 }
 
@@ -72,7 +79,6 @@ resource "azurerm_container_group" "cg" {
     image                 = var.image
     cpu                   = var.cpu
     memory                = var.memory
-    commands              = ["/usr/local/bin/cloud_compliance_scan", "-mode", var.mode, "-mgmt-console-url", var.mgmt-console-url, "-mgmt-console-port", var.mgmt-console-port, "-deepfence-key", var.deepfence-key]
     environment_variables = local.env_vars
 
     ports {
