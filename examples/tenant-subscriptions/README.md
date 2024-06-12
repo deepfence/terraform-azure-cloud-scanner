@@ -27,7 +27,9 @@ module "cloud-scanner_example_tenant-subscriptions" {
   mgmt-console-port       = "<Console port> eg. 443"
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   name                    = "deepfence-cloud-scanner"
-  image                   = "quay.io/deepfenceio/cloud-scanner:2.2.0"
+  image                   = "quay.io/deepfenceio/cloud_scanner_ce:2.3.0"
+  # for ThreatStryker
+  # image                   = "quay.io/deepfenceio/cloud_scanner:2.3.0"
   subscription_ids_access = "<List of subscription ids which can be accessed by cloud scanner> eg. ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
 }
 ```
@@ -73,11 +75,12 @@ $ terraform apply
 |------|-------------|------|---------|:--------:|
 | <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of CPU cores of the containers | `string` | `"1"` | no |
 | <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""` | no |
+| <a name="input_image"></a> [image](#input\_image) | n/a | `string` | `"quay.io/deepfenceio/cloud_scanner_ce:2.3.0"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | `"centralus"` | no |
+| <a name="input_log_level"></a> [log\_level](#input\_log\_level) | Log level | `string` | `"info"` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory in GB of the container | `string` | `"2"` | no |
 | <a name="input_mgmt-console-port"></a> [mgmt-console-port](#input\_mgmt-console-port) | mgmt-console-port | `string` | `"443"` | no |
 | <a name="input_mgmt-console-url"></a> [mgmt-console-url](#input\_mgmt-console-url) | mgmt-console-url | `string` | `""` | no |
-| <a name="input_mode"></a> [mode](#input\_mode) | mode | `string` | `"service"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name to be assigned to all child resources. A suffix may be added internally when required. Use default value unless you need to install multiple instances | `string` | `"deepfence-cloud-scanner"` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The resource group name to deploy secure for cloud stack | `string` | `""` | no |
 | <a name="input_subscription_ids_access"></a> [subscription\_ids\_access](#input\_subscription\_ids\_access) | List of subscription IDs where cloud scanner will scan resources. If no subscriptions are specified, all of the tenant will be used. | `list(string)` | `[]` | no |
@@ -86,4 +89,3 @@ $ terraform apply
 ## Outputs
 
 No outputs.
-

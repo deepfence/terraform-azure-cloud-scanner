@@ -47,12 +47,6 @@ variable "memory" {
 
 # container env variables
 
-variable "mode" {
-  type        = string
-  description = "mode"
-  default     = "service"
-}
-
 variable "mgmt-console-url" {
   type        = string
   description = "mgmt-console-url"
@@ -73,7 +67,7 @@ variable "deepfence-key" {
 
 variable "image" {
   type    = string
-  default = "deepfenceio/cloud-scanner:latest"
+  default = "quay.io/deepfenceio/cloud_scanner_ce:2.3.0"
 }
 
 # application access
@@ -84,3 +78,13 @@ variable "subscription_ids_access" {
   description = "List of subscription IDs where cloud scanner will scan resources. If no subscriptions are specified, all of the tenant will be used."
 }
 
+
+variable "log_level" {
+  type        = string
+  default     = "info"
+  description = "Log level"
+  validation {
+    condition     = contains(["error", "warn", "info", "debug", "trace"], var.log_level)
+    error_message = "Must be one of error, warn, info, debug, trace"
+  }
+}
