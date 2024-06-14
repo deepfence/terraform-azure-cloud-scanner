@@ -17,6 +17,7 @@ Copy the code below and paste it into a .tf file on your local machine.
 ```terraform
 provider "azurerm" {
   features {}
+  # Subscription ID to deploy the Azure Container Service
   subscription_id = "<SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX>"
 }
 
@@ -28,7 +29,17 @@ module "cloud-scanner_example_tenant-subscriptions" {
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   name                    = "deepfence-cloud-scanner"
   image                   = "quay.io/deepfenceio/cloud-scanner:2.2.2"
-  subscription_ids_access = "<List of subscription ids which can be accessed by cloud scanner> eg. ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
+  # List of subscription ids to monitor
+  subscription_ids_access = ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
+  # Location name https://gist.github.com/ausfestivus/04e55c7d80229069bf3bc75870630ec8#results
+  location                = "eastus"
+  # Number of CPU cores (Default: 4 vCPU)
+  cpu                     = "4"
+  # Memory in GB (Default: 8 GB)
+  memory                  = "8"
+  tags = {
+    product = "deepfence-cloud-scanner"
+  }
 }
 ```
 

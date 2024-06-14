@@ -35,13 +35,13 @@ variable "resource_group_name" {
 
 variable "cpu" {
   type        = string
-  default     = "1"
+  default     = "2"
   description = "Number of CPU cores of the containers"
 }
 
 variable "memory" {
   type        = string
-  default     = "2"
+  default     = "4"
   description = "Memory in GB of the container"
 }
 
@@ -82,5 +82,5 @@ variable "subscription_ids_access" {
 
 variable "image" {
   type    = string
-  default = "deepfenceio/cloud-scanner:1.5.0"
+  default = "quay.io/deepfenceio/cloud-scanner:2.2.2"
 }
