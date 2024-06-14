@@ -10,6 +10,18 @@ locals {
     AZURE_CLIENT_SECRET   = var.client_secret #application secret
     AZURE_SUBSCRIPTION_ID = var.subscription_id
   }
+
+  org_options = [
+    "-multiple-acc-ids", join(",", var.subscription_id_multiple),
+    "-org-acc-id", var.subscription_id
+  ]
+  command = [
+    "/usr/local/bin/cloud_compliance_scan",
+    "-mode", var.mode,
+    "-mgmt-console-url", var.mgmt-console-url,
+    "-mgmt-console-port", var.mgmt-console-port,
+    "-deepfence-key", var.deepfence-key,
+  ]
 }
 
 # creates virtual network
@@ -72,7 +84,7 @@ resource "azurerm_container_group" "cg" {
     image                 = var.image
     cpu                   = var.cpu
     memory                = var.memory
-    commands              = ["/usr/local/bin/cloud_compliance_scan", "-mode", var.mode, "-mgmt-console-url", var.mgmt-console-url, "-mgmt-console-port", var.mgmt-console-port, "-deepfence-key", var.deepfence-key]
+    commands              = length(var.subscription_id_multiple) > 0 ? concat(local.command, local.org_options) : local.command
     environment_variables = local.env_vars
 
     ports {

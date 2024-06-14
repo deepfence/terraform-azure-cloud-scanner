@@ -35,6 +35,12 @@ variable "subscription_id" {
 }
 
 
+variable "subscription_id_multiple" {
+  type        = list(string)
+  default = []
+  description = "Subscription ID where to deploy the cloud connector image"
+}
+
 # container
 
 variable "image" {
