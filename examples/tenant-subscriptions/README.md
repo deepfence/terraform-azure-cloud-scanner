@@ -12,7 +12,7 @@ Minimum requirements:
 
 ## Usage
 
-For quick testing, use this snippet on your terraform files
+Copy the code below and paste it into a .tf file on your local machine.
 
 ```terraform
 provider "azurerm" {
@@ -22,12 +22,12 @@ provider "azurerm" {
 
 module "cloud-scanner_example_tenant-subscriptions" {
   source                  = "deepfence/cloud-scanner/azure//examples/tenant-subscriptions"
-  version                 = "0.3.0"
+  version                 = "0.4.0"
   mgmt-console-url        = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port       = "<Console port> eg. 443"
   deepfence-key           = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   name                    = "deepfence-cloud-scanner"
-  image                   = "quay.io/deepfenceio/cloud-scanner:2.2.0"
+  image                   = "quay.io/deepfenceio/cloud-scanner:2.2.2"
   subscription_ids_access = "<List of subscription ids which can be accessed by cloud scanner> eg. ["XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"]
 }
 ```
