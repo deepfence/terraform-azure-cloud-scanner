@@ -37,7 +37,7 @@ variable "subscription_id" {
 
 variable "subscription_id_multiple" {
   type        = list(string)
-  default = []
+  default     = []
   description = "Subscription ID where to deploy the cloud connector image"
 }
 
@@ -103,6 +103,8 @@ variable "cloud_provider" {
   default     = "azure"
 }
 
-
-
-
+variable "debug" {
+  type        = string
+  description = "enable cloud scanner debug logs"
+  default     = "false"
+}

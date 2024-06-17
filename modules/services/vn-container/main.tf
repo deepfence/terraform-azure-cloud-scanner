@@ -3,7 +3,7 @@
 locals {
   env_vars = {
     CLOUD_PROVIDER        = var.cloud_provider
-    CLOUD_ACCOUNT_ID      = var.tenant_id
+    CLOUD_ACCOUNT_ID      = var.subscription_id
     AZURE_TENANT_ID       = var.tenant_id
     AZURE_REGION          = var.location
     AZURE_CLIENT_ID       = var.client_id     #application id
@@ -13,7 +13,7 @@ locals {
 
   org_options = [
     "-multiple-acc-ids", join(",", var.subscription_id_multiple),
-    "-org-acc-id", var.subscription_id
+    "-org-acc-id", var.tenant_id
   ]
   command = [
     "/usr/local/bin/cloud_compliance_scan",
@@ -21,6 +21,7 @@ locals {
     "-mgmt-console-url", var.mgmt-console-url,
     "-mgmt-console-port", var.mgmt-console-port,
     "-deepfence-key", var.deepfence-key,
+    "-debug", var.debug,
   ]
 }
 
