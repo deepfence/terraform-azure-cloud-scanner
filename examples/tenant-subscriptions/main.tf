@@ -1,8 +1,8 @@
 # creates resource group
 
-# provider "azurerm" {
-#   features {}
-# }
+provider "azurerm" {
+  features {}
+}
 
 module "infrastructure_resource_group" {
   source              = "../../modules/infrastructure/resource_group"

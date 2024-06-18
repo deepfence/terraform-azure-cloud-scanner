@@ -106,4 +106,3 @@ variable "is_organizational" {
   default     = false
   description = "whether Deepfence cloud scanner should be deployed in an organizational setup"
 }
-
