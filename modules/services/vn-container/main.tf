@@ -5,9 +5,13 @@ locals {
     CLOUD_PROVIDER          = var.cloud_provider
     CLOUD_REGION            = var.location
     CLOUD_ACCOUNT_ID        = var.subscription_id
+    CLOUD_ACCOUNT_NAME      = var.subscription_display_name
     CLOUD_ORGANIZATION_ID   = var.tenant_id
+    AZURE_TENANT_ID         = var.tenant_id
+    AZURE_REGION            = var.location
     AZURE_CLIENT_ID         = var.client_id     #application id
     AZURE_CLIENT_SECRET     = var.client_secret #application secret
+    AZURE_SUBSCRIPTION_ID   = var.subscription_id
     MGMT_CONSOLE_URL        = var.mgmt-console-url
     MGMT_CONSOLE_PORT       = var.mgmt-console-port
     DEEPFENCE_KEY           = var.deepfence-key

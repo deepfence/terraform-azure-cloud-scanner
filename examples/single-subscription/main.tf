@@ -34,19 +34,20 @@ locals {
 module "vn-container" {
   source = "../../modules/services/vn-container"
 
-  subscription_id     = data.azurerm_subscription.current.subscription_id
-  resource_group_name = module.infrastructure_resource_group.resource_group_name
-  location            = var.location
-  tenant_id           = local.tenant_id
-  client_id           = local.client_id
-  client_secret       = local.client_secret
-  mgmt-console-url    = var.mgmt-console-url
-  mgmt-console-port   = var.mgmt-console-port
-  deepfence-key       = var.deepfence-key
-  image               = var.image
-  cpu                 = var.cpu
-  memory              = var.memory
-  is_organizational   = "false"
-  log_level           = var.log_level
-  depends_on          = [module.infrastructure_resource_group]
+  subscription_id           = data.azurerm_subscription.current.subscription_id
+  subscription_display_name = data.azurerm_subscription.current.display_name
+  resource_group_name       = module.infrastructure_resource_group.resource_group_name
+  location                  = var.location
+  tenant_id                 = local.tenant_id
+  client_id                 = local.client_id
+  client_secret             = local.client_secret
+  mgmt-console-url          = var.mgmt-console-url
+  mgmt-console-port         = var.mgmt-console-port
+  deepfence-key             = var.deepfence-key
+  image                     = var.image
+  cpu                       = var.cpu
+  memory                    = var.memory
+  is_organizational         = "false"
+  log_level                 = var.log_level
+  depends_on                = [module.infrastructure_resource_group, module.infrastructure_cloud-scanner-app]
 }

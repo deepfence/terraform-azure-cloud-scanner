@@ -34,6 +34,11 @@ variable "subscription_id" {
   description = "Subscription ID where to deploy the cloud connector image"
 }
 
+variable "subscription_display_name" {
+  type        = string
+  description = "Subscription display name"
+}
+
 
 # container
 
