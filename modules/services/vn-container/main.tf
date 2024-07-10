@@ -5,6 +5,7 @@ locals {
     CLOUD_PROVIDER          = var.cloud_provider
     CLOUD_REGION            = var.location
     CLOUD_ACCOUNT_ID        = var.subscription_id
+    DEPLOYED_ACCOUNT_ID     = var.subscription_id
     CLOUD_ACCOUNT_NAME      = var.subscription_display_name
     CLOUD_ORGANIZATION_ID   = var.tenant_id
     AZURE_TENANT_ID         = var.tenant_id
