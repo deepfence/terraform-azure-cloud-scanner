@@ -30,7 +30,7 @@ data "azurerm_kubernetes_cluster" "default" {
 
 module "test" {
   source                     = "deepfence/cloud-scanner/azure//examples/aks"
-  version                    = "0.7.0"
+  version                    = "0.8.0"
   name                       = "<name of the app>"
   mgmt-console-url           = "<Console URL> eg. XXX.XXX.XX.XXX"
   deepfence-key              = "<DEEPFENCE API KEY>"
@@ -64,7 +64,7 @@ data "azurerm_kubernetes_cluster" "default" {
 
 module "test" {
   source                     = "deepfence/cloud-scanner/azure//examples/aks"
-  version                    = "0.7.0"
+  version                    = "0.8.0"
   name                       = "<name of the app>"
   mgmt-console-url           = "<Console URL> eg. XXX.XXX.XX.XXX"
   deepfence-key              = "<DEEPFENCE API KEY>"
@@ -117,30 +117,30 @@ No resources.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_aks_client_certificate"></a> [aks\_client\_certificate](#input\_aks\_client\_certificate) | aks cluster client certificate | `any` | n/a | yes |
-| <a name="input_aks_client_key"></a> [aks\_client\_key](#input\_aks\_client\_key) | aks cluster client key | `any` | n/a | yes |
-| <a name="input_aks_cluster_ca_certificate"></a> [aks\_cluster\_ca\_certificate](#input\_aks\_cluster\_ca\_certificate) | aks cluster client ca certificate | `any` | n/a | yes |
-| <a name="input_aks_host"></a> [aks\_host](#input\_aks\_host) | aks cluster host | `any` | n/a | yes |
-| <a name="input_cloud_scanner_chart_name"></a> [cloud\_scanner\_chart\_name](#input\_cloud\_scanner\_chart\_name) | cloud scanner chart name | `string` | `"deepfence-cloud-scanner"` | no |
-| <a name="input_cloud_scanner_chart_version"></a> [cloud\_scanner\_chart\_version](#input\_cloud\_scanner\_chart\_version) | cloud scanner chart version | `string` | `"2.3.1"` | no |
-| <a name="input_cloud_scanner_image"></a> [cloud\_scanner\_image](#input\_cloud\_scanner\_image) | quay.io/deepfenceio/cloud\_scanner\_ce if using ThreatMapper. quay.io/deepfenceio/cloud\_scanner if using ThreatStryker | `string` | `"quay.io/deepfenceio/cloud_scanner_ce"` | no |
-| <a name="input_cloud_scanner_image_tag"></a> [cloud\_scanner\_image\_tag](#input\_cloud\_scanner\_image\_tag) | cloud scanner container image tag | `string` | `"2.3.1"` | no |
-| <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""` | no |
-| <a name="input_deployedAccountID"></a> [deployedAccountID](#input\_deployedAccountID) | target project where cloud scanner is deployed in org mode | `string` | `""` | no |
-| <a name="input_extra_helm_values"></a> [extra\_helm\_values](#input\_extra\_helm\_values) | extra helm values for the helm chart uses same sytax as that of helm\_release for keys and values | `map(string)` | `{}` | no |
-| <a name="input_isOrganizationDeployment"></a> [isOrganizationDeployment](#input\_isOrganizationDeployment) | n/a | `bool` | `false` | no |
-| <a name="input_k8s_namespace"></a> [k8s\_namespace](#input\_k8s\_namespace) | namespace to install deepfence cloud scanner | `string` | `"deepfence"` | no |
-| <a name="input_k8s_service_account_name"></a> [k8s\_service\_account\_name](#input\_k8s\_service\_account\_name) | kubernetes service account name | `string` | `"deepfence-cloud-scanner"` | no |
-| <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | `"centralus"` | no |
-| <a name="input_log_level"></a> [log\_level](#input\_log\_level) | Log level | `string` | `"info"` | no |
-| <a name="input_mgmt-console-port"></a> [mgmt-console-port](#input\_mgmt-console-port) | mgmt-console-port | `string` | `"443"` | no |
-| <a name="input_mgmt-console-url"></a> [mgmt-console-url](#input\_mgmt-console-url) | mgmt-console-url | `string` | `""` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name to be assigned to all child resources. A suffix may be added internally when required. Use default value unless you need to install multiple instances | `string` | `"deepfence-cloud-scanner"` | no |
-| <a name="input_organizationAccountID"></a> [organizationAccountID](#input\_organizationAccountID) | organization subscription id | `string` | `""` | no |
-| <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | azure account subscription id | `string` | n/a | yes |
-| <a name="input_subscription_ids_access"></a> [subscription\_ids\_access](#input\_subscription\_ids\_access) | List of subscription IDs where cloud scanner will scan resources. If no subscriptions are specified, all of the tenant will be used. | `list(string)` | `[]` | no |
+| Name | Description | Type | Default                                                     | Required |
+|------|-------------|------|-------------------------------------------------------------|:--------:|
+| <a name="input_aks_client_certificate"></a> [aks\_client\_certificate](#input\_aks\_client\_certificate) | aks cluster client certificate | `any` | n/a                                                         | yes |
+| <a name="input_aks_client_key"></a> [aks\_client\_key](#input\_aks\_client\_key) | aks cluster client key | `any` | n/a                                                         | yes |
+| <a name="input_aks_cluster_ca_certificate"></a> [aks\_cluster\_ca\_certificate](#input\_aks\_cluster\_ca\_certificate) | aks cluster client ca certificate | `any` | n/a                                                         | yes |
+| <a name="input_aks_host"></a> [aks\_host](#input\_aks\_host) | aks cluster host | `any` | n/a                                                         | yes |
+| <a name="input_cloud_scanner_chart_name"></a> [cloud\_scanner\_chart\_name](#input\_cloud\_scanner\_chart\_name) | cloud scanner chart name | `string` | `"deepfence-cloud-scanner"`                                 | no |
+| <a name="input_cloud_scanner_chart_version"></a> [cloud\_scanner\_chart\_version](#input\_cloud\_scanner\_chart\_version) | cloud scanner chart version | `string` | `"2.4.0"`                                                   | no |
+| <a name="input_cloud_scanner_image"></a> [cloud\_scanner\_image](#input\_cloud\_scanner\_image) | quay.io/deepfenceio/cloud\_scanner\_ce if using ThreatMapper. quay.io/deepfenceio/cloud\_scanner if using ThreatStryker | `string` | `"quay.io/deepfenceio/cloud_scanner_ce"`                    | no |
+| <a name="input_cloud_scanner_image_tag"></a> [cloud\_scanner\_image\_tag](#input\_cloud\_scanner\_image\_tag) | cloud scanner container image tag | `string` | `"2.4.0"`                                                   | no |
+| <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""`                                                        | no |
+| <a name="input_deployedAccountID"></a> [deployedAccountID](#input\_deployedAccountID) | target project where cloud scanner is deployed in org mode | `string` | `""`                                                        | no |
+| <a name="input_extra_helm_values"></a> [extra\_helm\_values](#input\_extra\_helm\_values) | extra helm values for the helm chart uses same sytax as that of helm\_release for keys and values | `map(string)` | `{}`                                                        | no |
+| <a name="input_isOrganizationDeployment"></a> [isOrganizationDeployment](#input\_isOrganizationDeployment) | n/a | `bool` | `false`                                                     | no |
+| <a name="input_k8s_namespace"></a> [k8s\_namespace](#input\_k8s\_namespace) | namespace to install deepfence cloud scanner | `string` | `"deepfence"`                                               | no |
+| <a name="input_k8s_service_account_name"></a> [k8s\_service\_account\_name](#input\_k8s\_service\_account\_name) | kubernetes service account name | `string` | `"deepfence-cloud-scanner"`                                 | no |
+| <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | `"centralus"`                                               | no |
+| <a name="input_log_level"></a> [log\_level](#input\_log\_level) | Log level | `string` | `"info"`                                                    | no |
+| <a name="input_mgmt-console-port"></a> [mgmt-console-port](#input\_mgmt-console-port) | mgmt-console-port | `string` | `"443"`                                                     | no |
+| <a name="input_mgmt-console-url"></a> [mgmt-console-url](#input\_mgmt-console-url) | mgmt-console-url | `string` | `""`                                                        | no |
+| <a name="input_name"></a> [name](#input\_name) | Name to be assigned to all child resources. A suffix may be added internally when required. Use default value unless you need to install multiple instances | `string` | `"deepfence-cloud-scanner"`                                 | no |
+| <a name="input_organizationAccountID"></a> [organizationAccountID](#input\_organizationAccountID) | organization subscription id | `string` | `""`                                                        | no |
+| <a name="input_subscription_id"></a> [subscription\_id](#input\_subscription\_id) | azure account subscription id | `string` | n/a                                                         | yes |
+| <a name="input_subscription_ids_access"></a> [subscription\_ids\_access](#input\_subscription\_ids\_access) | List of subscription IDs where cloud scanner will scan resources. If no subscriptions are specified, all of the tenant will be used. | `list(string)` | `[]`                                                        | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags to be added to the resources | `map(string)` | <pre>{<br>  "product": "deepfence-cloud-scanner"<br>}</pre> | no |
 
 ## Outputs

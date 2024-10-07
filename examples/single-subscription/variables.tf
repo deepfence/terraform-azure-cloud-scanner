@@ -76,7 +76,7 @@ variable "subscription_ids_access" {
 
 variable "image" {
   type    = string
-  default = "quay.io/deepfenceio/cloud_scanner_ce:2.3.0"
+  default = "quay.io/deepfenceio/cloud_scanner_ce:2.4.0"
 }
 
 

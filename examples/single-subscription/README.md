@@ -23,15 +23,15 @@ provider "azurerm" {
 
 module "cloud-scanner_example_single-subscription" {
   source              = "deepfence/cloud-scanner/azure//examples/single-subscription"
-  version             = "0.6.0"
+  version             = "0.8.0"
   mgmt-console-url    = "<Console URL> eg. XXX.XXX.XX.XXX"
   mgmt-console-port   = "443"
   deepfence-key       = "<Deepfence-key> eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
   name                = "deepfence-cloud-scanner"
   # ThreatMapper
-  image               = "quay.io/deepfenceio/cloud_scanner_ce:2.3.0"
+  image               = "quay.io/deepfenceio/cloud_scanner_ce:2.4.0"
   # ThreatStryker
-  # image               = "quay.io/deepfenceio/cloud_scanner:2.3.0"
+  # image               = "quay.io/deepfenceio/cloud_scanner:2.4.0"
   # Location name https://gist.github.com/ausfestivus/04e55c7d80229069bf3bc75870630ec8#results
   location            = "eastus"
   # Number of CPU cores (Default: 2 vCPU)
@@ -85,7 +85,7 @@ $ terraform apply
 |------|-------------|------|---------|:--------:|
 | <a name="input_cpu"></a> [cpu](#input\_cpu) | Number of CPU cores of the containers | `string` | `"1"` | no |
 | <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""` | no |
-| <a name="input_image"></a> [image](#input\_image) | n/a | `string` | `"quay.io/deepfenceio/cloud_scanner_ce:2.3.0"` | no |
+| <a name="input_image"></a> [image](#input\_image) | n/a | `string` | `"quay.io/deepfenceio/cloud_scanner_ce:2.4.0"` | no |
 | <a name="input_location"></a> [location](#input\_location) | Zone where the stack will be deployed | `string` | `"centralus"` | no |
 | <a name="input_log_level"></a> [log\_level](#input\_log\_level) | Log level | `string` | `"info"` | no |
 | <a name="input_memory"></a> [memory](#input\_memory) | Memory in GB of the container | `string` | `"2"` | no |
