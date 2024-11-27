@@ -30,7 +30,7 @@ data "azurerm_kubernetes_cluster" "default" {
 
 module "test" {
   source                     = "deepfence/cloud-scanner/azure//examples/aks"
-  version                    = "0.9.0"
+  version                    = "0.9.1"
   name                       = "<name of the app>"
   mgmt-console-url           = "<Console URL> eg. XXX.XXX.XX.XXX"
   deepfence-key              = "<DEEPFENCE API KEY>"
@@ -64,7 +64,7 @@ data "azurerm_kubernetes_cluster" "default" {
 
 module "test" {
   source                     = "deepfence/cloud-scanner/azure//examples/aks"
-  version                    = "0.9.0"
+  version                    = "0.9.1"
   name                       = "<name of the app>"
   mgmt-console-url           = "<Console URL> eg. XXX.XXX.XX.XXX"
   deepfence-key              = "<DEEPFENCE API KEY>"
@@ -124,9 +124,9 @@ No resources.
 | <a name="input_aks_cluster_ca_certificate"></a> [aks\_cluster\_ca\_certificate](#input\_aks\_cluster\_ca\_certificate) | aks cluster client ca certificate | `any` | n/a                                                         | yes |
 | <a name="input_aks_host"></a> [aks\_host](#input\_aks\_host) | aks cluster host | `any` | n/a                                                         | yes |
 | <a name="input_cloud_scanner_chart_name"></a> [cloud\_scanner\_chart\_name](#input\_cloud\_scanner\_chart\_name) | cloud scanner chart name | `string` | `"deepfence-cloud-scanner"`                                 | no |
-| <a name="input_cloud_scanner_chart_version"></a> [cloud\_scanner\_chart\_version](#input\_cloud\_scanner\_chart\_version) | cloud scanner chart version | `string` | `"2.5.0"`                                                   | no |
+| <a name="input_cloud_scanner_chart_version"></a> [cloud\_scanner\_chart\_version](#input\_cloud\_scanner\_chart\_version) | cloud scanner chart version | `string` | `"2.5.1"`                                                   | no |
 | <a name="input_cloud_scanner_image"></a> [cloud\_scanner\_image](#input\_cloud\_scanner\_image) | quay.io/deepfenceio/cloud\_scanner\_ce if using ThreatMapper. quay.io/deepfenceio/cloud\_scanner if using ThreatStryker | `string` | `"quay.io/deepfenceio/cloud_scanner_ce"`                    | no |
-| <a name="input_cloud_scanner_image_tag"></a> [cloud\_scanner\_image\_tag](#input\_cloud\_scanner\_image\_tag) | cloud scanner container image tag | `string` | `"2.5.0"`                                                   | no |
+| <a name="input_cloud_scanner_image_tag"></a> [cloud\_scanner\_image\_tag](#input\_cloud\_scanner\_image\_tag) | cloud scanner container image tag | `string` | `"2.5.1"`                                                   | no |
 | <a name="input_deepfence-key"></a> [deepfence-key](#input\_deepfence-key) | deepfence-key | `string` | `""`                                                        | no |
 | <a name="input_deployedAccountID"></a> [deployedAccountID](#input\_deployedAccountID) | target project where cloud scanner is deployed in org mode | `string` | `""`                                                        | no |
 | <a name="input_extra_helm_values"></a> [extra\_helm\_values](#input\_extra\_helm\_values) | extra helm values for the helm chart uses same sytax as that of helm\_release for keys and values | `map(string)` | `{}`                                                        | no |

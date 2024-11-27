@@ -67,7 +67,7 @@ variable "deepfence-key" {
 
 variable "image" {
   type    = string
-  default = "quay.io/deepfenceio/cloud_scanner_ce:2.5.0"
+  default = "quay.io/deepfenceio/cloud_scanner_ce:2.5.1"
 }
 
 # application access
